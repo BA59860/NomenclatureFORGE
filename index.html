@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <!-- NomenclatureFORGE v0.3 | 2026-09-18 | Derived from the retrieved v0.2 design and paths.
-     Single-file vanilla HTML/CSS/JS. No external assets, requests, storage, or services.
-     Save as index.html for GitHub Pages. Tutor renders guidance only; finalAnswer is
+     Vanilla HTML/CSS/JS with local FORGE theme assets. No server services.
+     Only the appearance preference is stored in the browser.
+     Publish index.html with forge-theme.css and forge-theme.js on GitHub Pages. Tutor renders guidance only; finalAnswer is
      used exclusively by Learn/Practice. See input help for scope and conventions. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Learn, practice, and follow a guided path through introductory chemical nomenclature.">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="dark light">
 <title>NomenclatureFORGE</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23245fc2'/%3E%3Ctext x='9' y='24' fill='white' font-family='sans-serif' font-weight='bold' font-size='24'%3EF%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0c1116">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c1116'/%3E%3Ctext x='9' y='24' fill='white' font-family='sans-serif' font-weight='bold' font-size='24'%3EF%3C/text%3E%3C/svg%3E">
 <style>
     :root{
       --bg:#f6f8fb;
@@ -353,21 +355,23 @@
     @media(max-width:520px){.app{padding:16px}.topbar{gap:7px}.mode-btn{font-size:.875rem;padding:10px 5px;border-radius:10px}.type-grid{grid-template-columns:1fr}.type-card{min-height:0}.reference-grid{grid-template-columns:1fr;gap:0}.card{padding:18px}.step-tag{display:none}.problem-picker{align-items:flex-start;flex-direction:column}.hero p{font-size:.925rem}.practice-toolbar .small-btn{font-size:.875rem}}
     @media print{.topbar,.input-card,.footer-note,button{display:none}.app{max-width:none}.tutor-layout{display:block}.card{box-shadow:none;break-inside:avoid}body{background:white}}
 </style>
+<link rel="stylesheet" href="forge-theme.css">
+<script src="forge-theme.js"></script>
 </head>
-<body>
+<body class="forge-nomenclature">
 <main class="app">
-  <header class="hero">
+  <header class="hero"><div class="forge-heading">
     <div class="course-tag">CHMY 121 · CHEMICAL NOMENCLATURE</div>
     <h1>Nomenclature<span>FORGE</span></h1>
     <p>🥾 Forge your path through chemical nomenclature — one decision at a time.</p>
-  </header>
+  </div><div class="forge-header-tools"><button class="forge-theme-toggle" data-forge-theme-toggle type="button" aria-label="Switch to light mode">Light mode</button></div></header>
   <nav class="topbar" role="tablist" aria-label="Learning mode">
     <button class="mode-btn active" id="learnTab" type="button" role="tab" aria-controls="modePanel" aria-selected="true" data-mode="learn">🧭 Learn Mode</button>
     <button class="mode-btn" id="practiceTab" type="button" role="tab" aria-controls="modePanel" aria-selected="false" tabindex="-1" data-mode="practice">🧪 Practice Mode</button>
     <button class="mode-btn" id="tutorTab" type="button" role="tab" aria-controls="modePanel" aria-selected="false" tabindex="-1" data-mode="tutor">🥾 Tutor Mode</button>
   </nav>
   <section id="modePanel" role="tabpanel" aria-labelledby="learnTab"></section>
-  <noscript><div class="card">Enable JavaScript in your browser to use the guided naming paths. Everything runs in this file.</div></noscript>
+  <noscript><div class="card">Enable JavaScript in your browser to use the guided naming paths. Everything runs in your browser.</div></noscript>
   <footer class="footer-note">
     <p>Built for introductory chemistry. Use your instructor’s ion table and naming conventions.</p>
     <p>Works offline · Your entries stay in this browser · Progress lasts until you reload</p>
